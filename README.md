@@ -37,7 +37,7 @@ Describe any challenges encountered while building the app.
 
 ### App Walkthrough GIF
 
-<img src="https://media.giphy.com/media/iSGJpVH6Uw17iyNEQB/giphy.gif" width=250><br>
+<img src="https://media.giphy.com/media/TX1sLwZiSuaCs3xyv2/giphy.gif" width=250><br>
 
 ### Notes
 
