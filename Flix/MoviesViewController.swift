@@ -8,11 +8,11 @@
 import UIKit
 import AlamofireImage
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
+class MoviesViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
-    
-    
+
     @IBOutlet weak var tableView: UITableView!
+    
     var movies = [[String:Any]]()
     
     override func viewDidLoad() {
@@ -65,7 +65,26 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return movies.count
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+        
+        
+        // Find selected movie
+        let cell = sender as! UITableViewCell
+        let indexPath = tableView.indexPath(for: cell)
+        let movie = movies[indexPath!.row]
+        
+       
+        // Pass data to the movie details view controller
+        let detailsViewController = segue.destination as! MovieDetailsViewController
+        detailsViewController.movie = movie
+        
+        tableView.deselectRow(at: indexPath!, animated: true)
+        
+        
+    }
 
 }
 
